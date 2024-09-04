@@ -61,7 +61,7 @@
             <p>Evento: Proximamente</p>
           </div>
         </div>
-        <div id="map"></div>
+        <!-- <div id="map"></div> -->
       </div>
     </section>
 
@@ -69,7 +69,7 @@
       <h2>Discografía</h2>
       <div class="discography-grid">
         <div class="album">
-          <img src="./imagenes/discografia/Maquina de rebeldia.jpg" alt="Binary Riffs album cover, featuring a guitar made of binary code" width="250" height="250">
+          <img src="./imagenes/discografia/Maquina de rebeldia.jpg" alt="Primer disco de maquina de rebeldía, llamada MDR" width="250" height="250">
           <div class="album-overlay">
             <h3>Máquina de Rebeldía</h3>
             <p>Explosión de rebeldía y distorsión en un caos urbano.</p>
@@ -110,10 +110,10 @@
     <!-- pruebas conoce a la banda -->
      
     <section id="band-members" class="section">
-          <h2>Conoce a la Banda prueba</h2>
+          <h2>Conoce a la Banda</h2>
           <div class="member-grid">
               <div class="member-card">
-                  <img src="./imagenes/integrantes/Daniel.jpg" alt="Alex 'Glitch' Johnson - Lead Vocalist" class="member-photo" width="250" height="300">
+                  <img src="./imagenes/integrantes/Daniel.jpg" alt="Daniel Perez mas conocido como DanyBoy - Vocalsita principal" class="member-photo" width="250" height="300">
                   <div class="member-info">
                       <h3 class="member-name">Daniel "DanyBoy" Perez</h3>
                       <p class="member-role">Voz Principal</p>
@@ -127,7 +127,7 @@
               </div>
 
               <div class="member-card">
-                  <img src="./imagenes/integrantes/brian.jpg" alt="Samantha 'Circuit' Lee - Lead Guitar" class="member-photo" width="250" height="300">
+                  <img src="./imagenes/integrantes/brian.jpg" alt="Elwis Silva, mas conocido como Brian - Guitarra principal" class="member-photo" width="250" height="300">
                   <div class="member-info">
                       <h3 class="member-name">Elwis "Brian" Silva</h3>
                       <p class="member-role">Guitarra Principal</p>
@@ -169,7 +169,7 @@
               </div> -->
 
               <div class="member-card">
-                  <img src="./imagenes/integrantes/Brock.jpg" alt="Dave 'DDoS' Martinez - Drums" class="member-photo" width="250" height="300">
+                  <img src="./imagenes/integrantes/Brock.jpg" alt="Brock alias brock - Bateria" class="member-photo" width="250" height="300">
                   <div class="member-info">
                       <h3 class="member-name">Brock "Brock" Desconocido</h3>
                       <p class="member-role">Batería</p>
@@ -193,22 +193,22 @@
       <h2>Galería de Fotos</h2>
       <div class="photo-gallery">
         <div class="gallery-item">
-          <img src="./imagenes/galeria/banda.jpg" alt="TechnoRock performing live on stage with dazzling light show" width="200" height="150">
+          <img src="./imagenes/galeria/banda.jpg" alt="" width="200" height="150">
         </div>
         <div class="gallery-item">
-          <img src="./imagenes/galeria/texas.jpg" alt="Close-up of guitarist's hands on fretboard with digital effects overlay" width="200" height="150">
+          <img src="./imagenes/galeria/texas.jpg" alt="" width="200" height="150">
         </div>
         <div class="gallery-item">
-          <img src="./imagenes/galeria/img1.jpg" alt="Band members in futuristic costumes against a backdrop of computer circuitry" width="200" height="150">
+          <img src="./imagenes/galeria/img1.jpg" alt="" width="200" height="150">
         </div>
         <div class="gallery-item">
-          <img src="./imagenes/galeria/img2.jpg" alt="Crowd surfing at a TechnoRock concert with holographic projections above" width="200" height="150">
+          <img src="./imagenes/galeria/img2.jpg" alt="" width="200" height="150">
         </div>
         <div class="gallery-item">
-          <img src="./imagenes/galeria/img3.jpg" alt="Behind-the-scenes in recording studio with mix of vintage and high-tech equipment" width="200" height="150">
+          <img src="./imagenes/galeria/img3.jpg" alt="" width="200" height="150">
         </div>
         <div class="gallery-item">
-          <img src="./imagenes/galeria/img4.jpg" alt="TechnoRock album signing event with fans in cyber-punk inspired outfits" width="200" height="150">
+          <img src="./imagenes/galeria/img4.jpg" alt="" width="200" height="150">
         </div>
       </div>
     </section>
@@ -276,7 +276,7 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script> -->
   <script>
     // Hacker-style background animation
     const canvas = document.getElementById('hacker-bg');
@@ -314,7 +314,7 @@
     setInterval(draw, 33);
 
     // Google Maps integration
-    function initMap() {
+   /* function initMap() {
       const map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 37.7749, lng: -122.4194},
         zoom: 4
@@ -340,50 +340,8 @@
           infoWindow.open(map, marker);
         });
       });
-    }
+    }*/
 
-    // Songbook functionality
-    function loadAlbum(albumName) {
-      // Simulated album data
-      const albums = {
-        'Binary Riffs': ['Digital Love', 'Cyber Heart', 'Code Breaker'],
-        'Cyber Solos': ['Neon Dreams', 'Virtual Reality', 'Hologram Romance'],
-        'Quantum Beats': ['Entangled', 'Superposition', 'Wave Function']
-      };
-
-      const songList = albums[albumName];
-      const songContent = document.querySelector('.song-content');
-      songContent.innerHTML = `
-        <h3>${albumName}</h3>
-        <ul>
-          ${songList.map(song => `<li onclick="loadSong('${song}')">${song}</li>`).join('')}
-        </ul>
-      `;
-    }
-
-    function loadSong(songName) {
-      // Simulated song data
-      const lyrics = `This is where the lyrics for ${songName} would go.\n\nVerse 1:\nDigital dreams in a neon light,\nCyber world shining so bright.\n\nChorus:\nTechno rock, we're breaking through,\nVirtual reality, it's all so new.`;
-
-      const songContent = document.querySelector('.song-content');
-      songContent.innerHTML = `
-        <div class="song-controls">
-          <button id="play-btn"><i class="fas fa-play"></i></button>
-          <button id="forward-btn"><i class="fas fa-forward"></i></button>
-          <button id="backward-btn"><i class="fas fa-backward"></i></button>
-          <div class="progress-bar">
-            <div class="progress"></div>
-          </div>
-          <span class="song-duration">0:00 / 3:30</span>
-        </div>
-        <div class="lyrics">
-          <h3>${songName}</h3>
-          ${lyrics}
-        </div>
-      `;
-    }
-
-    // Add event listeners and additional functionality as needed
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
   <script src="./script.js"></script>
