@@ -1,0 +1,370 @@
+<html><head><base href="https://ticketmaster.com/rockhacker_la">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RockHacker Band - Los Angeles Show Tickets</title>
+<style>
+    :root {
+        --primary-color: #1a1a1a;
+        --secondary-color: #00ff00;
+        --text-color: #ffffff;
+        --hover-color: #ff00ff;
+        --accent-color: #ff6600;
+    }
+
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Courier New', monospace;
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .logo img {
+        max-width: 200px;
+    }
+
+    h1, h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        text-shadow: 0 0 10px var(--secondary-color);
+    }
+
+    .ticket-info {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        padding: 30px;
+        margin-bottom: 40px;
+    }
+
+    .ticket-type {
+        border-bottom: 1px solid var(--secondary-color);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .ticket-type:last-child {
+        border-bottom: none;
+    }
+
+    .ticket-type h3 {
+        color: var(--accent-color);
+    }
+
+    .price {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: var(--secondary-color);
+    }
+
+    .buy-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .buy-button:hover {
+        background-color: var(--hover-color);
+        transform: scale(1.05);
+    }
+
+    .event-details {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        padding: 30px;
+        margin-bottom: 40px;
+    }
+
+    .event-details h2 {
+        color: var(--accent-color);
+    }
+
+    #venue-map {
+        height: 300px;
+        width: 100%;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    footer {
+        background-color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+
+        .ticket-info, .event-details {
+            padding: 20px;
+        }
+    }
+
+    /* Glitch effect */
+    .glitch {
+        position: relative;
+        color: var(--text-color);
+        font-size: 3em;
+        letter-spacing: 0.5em;
+        animation: glitch 2s linear infinite;
+    }
+
+    @keyframes glitch {
+        2%, 64% {
+            transform: translate(2px,0) skew(0deg);
+        }
+        4%, 60% {
+            transform: translate(-2px,0) skew(0deg);
+        }
+        62% {
+            transform: translate(0,0) skew(5deg); 
+        }
+    }
+
+    .glitch:before,
+    .glitch:after {
+        content: attr(title);
+        position: absolute;
+        left: 0;
+    }
+
+    .glitch:before {
+        animation: glitchTop 1s linear infinite;
+        clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    }
+
+    @keyframes glitchTop {
+        2%, 64% {
+            transform: translate(2px,-2px);
+        }
+        4%, 60% {
+            transform: translate(-2px,2px);
+        }
+        62% {
+            transform: translate(13px,-1px) skew(-13deg); 
+        }
+    }
+
+    .glitch:after {
+        animation: glitchBottom 1.5s linear infinite;
+        clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    }
+
+    @keyframes glitchBottom {
+        2%, 64% {
+            transform: translate(-2px,0);
+        }
+        4%, 60% {
+            transform: translate(-2px,0);
+        }
+        62% {
+            transform: translate(-22px,5px) skew(21deg); 
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="https://example.com/rockhacker_logo.png" alt="RockHacker Band Logo" width="200" height="100">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="glitch" title="RockHacker Band">RockHacker Band</h1>
+            <h2>Los Angeles Show - Digital Dreamland</h2>
+
+            <section class="ticket-info">
+                <h2>Available Tickets</h2>
+                <div class="ticket-type">
+                    <h3>General Admission</h3>
+                    <p>Standing room only in the main arena.</p>
+                    <p class="price">$49.99</p>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+                <div class="ticket-type">
+                    <h3>VIP Package</h3>
+                    <p>Includes early entry, exclusive merchandise, and meet & greet with the band.</p>
+                    <p class="price">$149.99</p>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+                <div class="ticket-type">
+                    <h3>Cyber Lounge Access</h3>
+                    <p>Elevated viewing area with comfortable seating and private bar.</p>
+                    <p class="price">$99.99</p>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </section>
+
+            <section class="event-details">
+                <h2>Event Details</h2>
+                <p><strong>Date:</strong> July 2, 2023</p>
+                <p><strong>Time:</strong> Doors open at 7:00 PM, Show starts at 8:30 PM</p>
+                <p><strong>Venue:</strong> Digital Dreamland</p>
+                <p><strong>Address:</strong> 1234 Cyber Boulevard, Los Angeles, CA 90001</p>
+                <div id="venue-map"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 RockHacker Band. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            const venue = { lat: 34.0522, lng: -118.2437 }; // Coordinates for Los Angeles
+            const map = new google.maps.Map(document.getElementById('venue-map'), {
+                zoom: 15,
+                center: venue,
+                styles: [
+                    {
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#242f3e"}]
+                    },
+                    {
+                        "elementType": "labels.text.stroke",
+                        "stylers": [{"color": "#242f3e"}]
+                    },
+                    {
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#746855"}]
+                    },
+                    {
+                        "featureType": "administrative.locality",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#d59563"}]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#d59563"}]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#263c3f"}]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#6b9a76"}]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#38414e"}]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "geometry.stroke",
+                        "stylers": [{"color": "#212a37"}]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#9ca5b3"}]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#746855"}]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.stroke",
+                        "stylers": [{"color": "#1f2835"}]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#f3d19c"}]
+                    },
+                    {
+                        "featureType": "transit",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#2f3948"}]
+                    },
+                    {
+                        "featureType": "transit.station",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#d59563"}]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#17263c"}]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#515c6d"}]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [{"color": "#17263c"}]
+                    }
+                ]
+            });
+            const marker = new google.maps.Marker({
+                position: venue,
+                map: map,
+                title: 'Digital Dreamland',
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    scale: 10,
+                    fillColor: "#00ff00",
+                    fillOpacity: 0.8,
+                    strokeWeight: 2,
+                    strokeColor: "#ffffff"
+                }
+            });
+        }
+
+        // Ticket purchase functionality (placeholder)
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Thank you for your purchase! This is a demo - no actual transaction has occurred.');
+            });
+        });
+    </script>
+</body>
+</html>

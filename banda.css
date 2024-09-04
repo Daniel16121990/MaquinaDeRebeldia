@@ -1,0 +1,98 @@
+#band-members {
+        padding: 90px 0 0 0;
+        /* background-color: #1a1a1a; */
+        color: #ffffff;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .member-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .member-card {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 255, 0, 0.1);
+    }
+
+    .member-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 255, 0, 0.2);
+    }
+
+    .member-photo {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        filter: grayscale(50%) contrast(120%);
+        transition: filter 0.3s ease;
+    }
+
+    .member-card:hover .member-photo {
+        filter: grayscale(0%) contrast(100%);
+    }
+
+    .member-info {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .member-name {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        color: #00ff00;
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+
+    .member-role {
+        font-style: italic;
+        margin-bottom: 15px;
+        color: #cccccc;
+    }
+
+    .member-bio {
+        font-size: 0.9em;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .member-social {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .member-social a {
+        color: #00ff00;
+        font-size: 1.4em;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .member-social a:hover {
+        color: #ff00ff;
+        transform: scale(1.2);
+    }
+
+    .fun-fact {
+        background-color: rgba(0, 255, 0, 0.1);
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 15px;
+        font-size: 0.9em;
+        color: #00ff00;
+    }
+
+    @media (max-width: 768px) {
+        .member-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+    }

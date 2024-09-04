@@ -1,0 +1,363 @@
+<html><head><base href="https://rockhackerband.com/#upcoming-events">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RockHacker Band - Upcoming Events</title>
+<style>
+    :root {
+        --primary-color: #1a1a1a;
+        --secondary-color: #00ff00;
+        --text-color: #ffffff;
+        --hover-color: #ff00ff;
+    }
+
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Courier New', monospace;
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px 0;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    nav ul li a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: var(--hover-color);
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 3em;
+        margin-bottom: 40px;
+        text-shadow: 0 0 10px var(--secondary-color);
+    }
+
+    #upcoming-events {
+        padding: 50px 0;
+    }
+
+    #map {
+        height: 400px;
+        width: 100%;
+        margin-bottom: 40px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .event-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .event-card {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        padding: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+    }
+
+    .event-date {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: var(--secondary-color);
+    }
+
+    .event-venue {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .event-location {
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+
+    .event-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+    }
+
+    .event-link:hover {
+        background-color: var(--hover-color);
+    }
+
+    footer {
+        background-color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        #map {
+            height: 300px;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#discography">Discography</a></li>
+                <li><a href="#photo-gallery">Gallery</a></li>
+                <li><a href="#video-section">Videos</a></li>
+                <li><a href="#band-members">Band</a></li>
+                <li><a href="#upcoming-events">Events</a></li>
+                <li><a href="#songbook">Songbook</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="upcoming-events">
+            <div class="container">
+                <h1>Upcoming Events</h1>
+                <div id="map"></div>
+                <div class="event-list">
+                    <div class="event-card">
+                        <p class="event-date">June 15, 2023</p>
+                        <p class="event-venue">Cyber Arena</p>
+                        <p class="event-location">New York, NY</p>
+                        <a href="https://ticketmaster.com/rockhacker_ny" class="event-link" target="_blank">Get Tickets</a>
+                    </div>
+                    <div class="event-card">
+                        <p class="event-date">July 2, 2023</p>
+                        <p class="event-venue">Digital Dreamland</p>
+                        <p class="event-location">Los Angeles, CA</p>
+                        <a href="https://ticketmaster.com/rockhacker_la" class="event-link" target="_blank">Get Tickets</a>
+                    </div>
+                    <div class="event-card">
+                        <p class="event-date">July 20, 2023</p>
+                        <p class="event-venue">Binary Ballroom</p>
+                        <p class="event-location">Chicago, IL</p>
+                        <a href="https://ticketmaster.com/rockhacker_chi" class="event-link" target="_blank">Get Tickets</a>
+                    </div>
+                    <div class="event-card">
+                        <p class="event-date">August 5, 2023</p>
+                        <p class="event-venue">Quantum Quorum</p>
+                        <p class="event-location">Austin, TX</p>
+                        <a href="https://ticketmaster.com/rockhacker_atx" class="event-link" target="_blank">Get Tickets</a>
+                    </div>
+                    <div class="event-card">
+                        <p class="event-date">August 18, 2023</p>
+                        <p class="event-venue">Firewall Festival</p>
+                        <p class="event-location">Seattle, WA</p>
+                        <a href="https://ticketmaster.com/rockhacker_sea" class="event-link" target="_blank">Get Tickets</a>
+                    </div>
+                    <div class="event-card">
+                        <p class="event-date">September 3, 2023</p>
+                        <p class="event-venue">Encryption Emporium</p>
+                        <p class="event-location">Boston, MA</p>
+                        <a href="https://ticketmaster.com/rockhacker_bos" class="event-link" target="_blank">Get Tickets</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 RockHacker Band. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+    <script>
+        // Google Maps initialization
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 39.8283, lng: -98.5795},
+                zoom: 4,
+                styles: [
+                    {
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#242f3e"}]
+                    },
+                    {
+                        "elementType": "labels.text.stroke",
+                        "stylers": [{"color": "#242f3e"}]
+                    },
+                    {
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#746855"}]
+                    },
+                    {
+                        "featureType": "administrative.locality",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#d59563"}]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#d59563"}]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#263c3f"}]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#6b9a76"}]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#38414e"}]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "geometry.stroke",
+                        "stylers": [{"color": "#212a37"}]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#9ca5b3"}]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#746855"}]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry.stroke",
+                        "stylers": [{"color": "#1f2835"}]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#f3d19c"}]
+                    },
+                    {
+                        "featureType": "transit",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#2f3948"}]
+                    },
+                    {
+                        "featureType": "transit.station",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#d59563"}]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "geometry",
+                        "stylers": [{"color": "#17263c"}]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{"color": "#515c6d"}]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [{"color": "#17263c"}]
+                    }
+                ]
+            });
+
+            // Add markers for each event
+            const events = [
+                {lat: 40.7128, lng: -74.0060, title: 'New York Show - Cyber Arena'},
+                {lat: 34.0522, lng: -118.2437, title: 'Los Angeles Show - Digital Dreamland'},
+                {lat: 41.8781, lng: -87.6298, title: 'Chicago Show - Binary Ballroom'},
+                {lat: 30.2672, lng: -97.7431, title: 'Austin Show - Quantum Quorum'},
+                {lat: 47.6062, lng: -122.3321, title: 'Seattle Show - Firewall Festival'},
+                {lat: 42.3601, lng: -71.0589, title: 'Boston Show - Encryption Emporium'}
+            ];
+
+            events.forEach(event => {
+                const marker = new google.maps.Marker({
+                    position: {lat: event.lat, lng: event.lng},
+                    map: map,
+                    title: event.title,
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        scale: 10,
+                        fillColor: "#00ff00",
+                        fillOpacity: 0.8,
+                        strokeWeight: 2,
+                        strokeColor: "#ffffff"
+                    }
+                });
+
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `<div style="color: #000;">${event.title}</div>`
+                });
+
+                marker.addListener('click', () => {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

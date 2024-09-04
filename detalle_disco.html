@@ -1,0 +1,573 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album: Neon Nightmares - Strychnine Symphony</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Orbitron:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #0f0;
+            --secondary-color: #f0f;
+            --bg-color: #111;
+            --text-color: #ddd;
+            --card-bg: #222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .album-details {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .album-cover {
+            flex-shrink: 0;
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+        }
+
+        .album-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .album-info {
+            flex-grow: 1;
+        }
+
+        .album-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .artist-name {
+            font-size: 24px;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .release-date {
+            font-size: 18px;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .album-description {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .track-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .track {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .track:hover {
+            transform: translateY(-5px);
+        }
+
+        .track-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .track-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .track-duration {
+            font-size: 18px;
+            color: var(--secondary-color);
+        }
+
+        .track-description {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .playback-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .playback-button, .lyrics-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .spotify {
+            background-color: #1DB954;
+            color: #fff;
+        }
+
+        .youtube {
+            background-color: #FF0000;
+            color: #fff;
+        }
+
+        .deezer {
+            background-color: #00C7F2;
+            color: #fff;
+        }
+
+        .lyrics-button {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+
+        .playback-button:hover, .lyrics-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .lyrics-container {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .lyrics-text {
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: center;
+            white-space: pre-wrap;
+        }
+
+        .audio-player {
+            background-color: var(--card-bg);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .play-pause, .skip-back, .skip-forward {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            height: 5px;
+            background-color: var(--text-color);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            width: 0%;
+        }
+
+        .track-time {
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+        @media (max-width: 768px) {
+            .album-details {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .album-cover {
+                width: 250px;
+                height: 250px;
+            }
+
+            .track-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .playback-options {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .audio-controls {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="album-details">
+            <div class="album-cover">
+                <img src="./imagenes/discografia/Maquina de rebeldia.jpg" alt="Neon Nightmares album cover, showing a neon-lit alleyway with a guitar-wielding silhouette" width="300" height="300">
+            </div>
+            <div class="album-info">
+                <h1 class="album-title">Maquina de Rebeldia</h1>
+                <h2 class="artist-name">MDR</h2>
+                <p class="release-date">Lanzamiento: Octubre 15, 2023</p>
+                <p class="album-description">
+                    "MDR" Un llamado a la acción con riffs incendiarios y letras ardientes que avivan el fuego de la rebelión en cada acorde.
+                </p>
+            </div>
+        </div>
+
+        <div class="track-list">
+            <div class="track">
+                <div class="track-header">
+                    <h3 class="track-title">1. Injusticia</h3>
+                    <span class="track-duration">4:32</span>
+                </div>
+                <p class="track-description">
+                    Una cancion de protesta en contra las injusticias que nuestro pueblo sufre, pero no estamos solos.
+                </p>
+                <div class="playback-options">
+                    <button class="playback-button spotify" onclick="window.open('https://open.spotify.com/track/cybersunrise')">Spotify</button>
+                    <button class="playback-button youtube" onclick="window.open('https://www.youtube.com/watch?v=cybersunrise')">YouTube</button>
+                    <button class="playback-button deezer" onclick="window.open('https://www.deezer.com/track/cybersunrise')">Deezer</button>
+                    <button class="lyrics-button" onclick="toggleLyrics(this)">Ver letra</button>
+                </div>
+                <div class="lyrics-container">
+                    <div class="audio-player">
+                        <audio id="audio-cybersunrise">
+                            <source src="cybersunrise.mp3" type="audio/mpeg">
+                            Su navegador no soporta el elemento de audio.
+                        </audio>
+                        <div class="audio-controls">
+                            <button class="skip-back" onclick="skip(-5)">&laquo;</button>
+                            <button class="play-pause" onclick="togglePlay(this)">&#9658;</button>
+                            <button class="skip-forward" onclick="skip(5)">&raquo;</button>
+                            <div class="progress-bar" onclick="seek(event)">
+                                <div class="progress"></div>
+                            </div>
+                            <span class="track-time">0:00 / 4:32</span>
+                        </div>
+                    </div>
+                    <div class="lyrics-text">
+Neon lights flicker, a new day dawns
+In this digital wasteland, we're all pawns
+Circuits pulse with an electric heartbeat
+Cyber sunrise, where virtual and real meet
+
+[Chorus]
+Cyber sunrise, painting pixelated skies
+Cyber sunrise, opening binary eyes
+In this world of ones and zeros
+We search for meaning, digital heroes
+
+Connections made through fiber optic veins
+A network of souls, linked by digital chains
+Are we more than data in the machine?
+Or just ghosts in the code, unseen?
+
+[Chorus]
+Cyber sunrise, painting pixelated skies
+Cyber sunrise, opening binary eyes
+In this world of ones and zeros
+We search for meaning, digital heroes
+
+Bridge:
+But in this sea of information
+We yearn for true communication
+Beyond the screens and neon glow
+There's a world we used to know
+
+As the sun rises on our cyber dreams
+Nothing is quite as real as it seems
+But in this dawn of a new digital day
+We'll find our path, we'll find our way
+
+[Chorus]
+Cyber sunrise, painting pixelated skies
+Cyber sunrise, opening binary eyes
+In this world of ones and zeros
+We'll be more than digital heroes
+                    </div>
+                    
+                </div>
+            </div>
+
+
+
+
+            <div class="track">
+                <div class="track-header">
+                    <h3 class="track-title">2. Sistema Corrupto</h3>
+                    <span class="track-duration">4:32</span>
+                </div>
+                <p class="track-description">
+                    Un grito de coraje contra el sistema politico que lo unico que hacen es lucrar con el sufrimiento de la gente.
+                </p>
+                <div class="playback-options">
+                    <button class="playback-button spotify" onclick="window.open('https://open.spotify.com/track/cybersunrise')">Spotify</button>
+                    <button class="playback-button youtube" onclick="window.open('https://www.youtube.com/watch?v=cybersunrise')">YouTube</button>
+                    <button class="playback-button deezer" onclick="window.open('https://www.deezer.com/track/cybersunrise')">Deezer</button>
+                    <button class="lyrics-button" onclick="toggleLyrics(this)">Ver letra</button>
+                </div>
+                <div class="lyrics-container">
+                    <div class="audio-player">
+                        <audio id="audio-cybersunrise">
+                            <source src="cybersunrise.mp3" type="audio/mpeg">
+                            Su navegador no soporta el elemento de audio.
+                        </audio>
+                        <div class="audio-controls">
+                            <button class="skip-back" onclick="skip(-5)">&laquo;</button>
+                            <button class="play-pause" onclick="togglePlay(this)">&#9658;</button>
+                            <button class="skip-forward" onclick="skip(5)">&raquo;</button>
+                            <div class="progress-bar" onclick="seek(event)">
+                                <div class="progress"></div>
+                            </div>
+                            <span class="track-time">0:00 / 4:32</span>
+                        </div>
+                    </div>
+                    <div class="lyrics-text">
+Neon lights flicker, a new day dawns
+In this digital wasteland, we're all pawns
+Circuits pulse with an electric heartbeat
+Cyber sunrise, where virtual and real meet
+
+[Chorus]
+Cyber sunrise, painting pixelated skies
+Cyber sunrise, opening binary eyes
+In this world of ones and zeros
+We search for meaning, digital heroes
+
+Connections made through fiber optic veins
+A network of souls, linked by digital chains
+Are we more than data in the machine?
+Or just ghosts in the code, unseen?
+
+[Chorus]
+Cyber sunrise, painting pixelated skies
+Cyber sunrise, opening binary eyes
+In this world of ones and zeros
+We search for meaning, digital heroes
+
+Bridge:
+But in this sea of information
+We yearn for true communication
+Beyond the screens and neon glow
+There's a world we used to know
+
+As the sun rises on our cyber dreams
+Nothing is quite as real as it seems
+But in this dawn of a new digital day
+We'll find our path, we'll find our way
+
+[Chorus]
+Cyber sunrise, painting pixelated skies
+Cyber sunrise, opening binary eyes
+In this world of ones and zeros
+We'll be more than digital heroes
+                    </div>
+                    
+                </div>
+            </div>
+
+
+
+            <div class="track">
+                <div class="track-header">
+                    <h3 class="track-title">3. Caos</h3>
+                    <span class="track-duration">4:32</span>
+                </div>
+                <p class="track-description">
+                    Una melodía dura y desordenada indicando que caos que hay en una ciudad en donde la gente entra en rebelión.
+                </p>
+                <div class="playback-options">
+                    <button class="playback-button spotify" onclick="window.open('https://open.spotify.com/track/cybersunrise')">Spotify</button>
+                    <button class="playback-button youtube" onclick="window.open('https://www.youtube.com/watch?v=cybersunrise')">YouTube</button>
+                    <button class="playback-button deezer" onclick="window.open('https://www.deezer.com/track/cybersunrise')">Deezer</button>
+                    <button class="lyrics-button" onclick="toggleLyrics(this)">Ver letra</button>
+                </div>
+                <div class="lyrics-container">
+
+                    <div class="audio-player">
+                        <audio id="audio-cybersunrise">
+                            <source src="./canciones/Loreena McKennitt - The Visit - 05.mp3" type="audio/mpeg">
+                            Su navegador no soporta el elemento de audio.
+                        </audio>
+                        <div class="audio-controls">
+                            <button class="skip-back" onclick="skip(-5)">&laquo;</button>
+                            <button class="play-pause" onclick="togglePlay(this)">&#9658;</button>
+                            <button class="skip-forward" onclick="skip(5)">&raquo;</button>
+                            <div class="progress-bar" onclick="seek(event)">
+                                <div class="progress"></div>
+                            </div>
+                            <span class="track-time">0:00 / 4:32</span>
+                        </div>
+                    </div>
+                    <div class="lyrics-text">
+Neon lights flicker, a new day dawns
+In this digital wasteland, we're all pawns
+Circuits pulse with an electric heartbeat
+Cyber sunrise, where virtual and real meet
+
+[Chorus]
+Cyber sunrise, painting pixelated skies
+Cyber sunrise, opening binary eyes
+In this world of ones and zeros
+We search for meaning, digital heroes
+
+Connections made through fiber optic veins
+A network of souls, linked by digital chains
+Are we more than data in the machine?
+Or just ghosts in the code, unseen?
+
+[Chorus]
+Cyber sunrise, painting pixelated skies
+Cyber sunrise, opening binary eyes
+In this world of ones and zeros
+We search for meaning, digital heroes
+
+Bridge:
+But in this sea of information
+We yearn for true communication
+Beyond the screens and neon glow
+There's a world we used to know
+
+As the sun rises on our cyber dreams
+Nothing is quite as real as it seems
+But in this dawn of a new digital day
+We'll find our path, we'll find our way
+
+[Chorus]
+Cyber sunrise, painting pixelated skies
+Cyber sunrise, opening binary eyes
+In this world of ones and zeros
+We'll be more than digital heroes
+                    </div>
+
+                </div>
+            </div>
+            <!-- More tracks would be added here following the same structure -->
+
+        </div>
+    </div>
+
+    <script>
+        function toggleLyrics(button) {
+            const lyricsContainer = button.parentElement.nextElementSibling;
+            if (lyricsContainer.style.display === 'none' || lyricsContainer.style.display === '') {
+                lyricsContainer.style.display = 'block';
+                button.textContent = 'ocultar letra';
+                lyricsContainer.scrollIntoView({behavior: 'smooth'});
+            } else {
+                lyricsContainer.style.display = 'none';
+                button.textContent = 'Ver letra';
+            }
+        }
+
+        let audio;
+        let progressBar;
+        let timeDisplay;
+
+        function togglePlay(button) {
+            audio = button.closest('.audio-player').querySelector('audio');
+            progressBar = button.closest('.audio-controls').querySelector('.progress');
+            timeDisplay = button.closest('.audio-controls').querySelector('.track-time');
+
+            if (audio.paused) {
+                audio.play();
+                button.innerHTML = '&#10074;&#10074;'; // pause symbol
+                updateProgress();
+            } else {
+                audio.pause();
+                button.innerHTML = '&#9658;'; // play symbol
+            }
+        }
+
+        function updateProgress() {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = `${progress}%`;
+            
+            const currentTime = formatTime(audio.currentTime);
+            const duration = formatTime(audio.duration);
+            timeDisplay.textContent = `${currentTime} / ${duration}`;
+
+            if (!audio.paused) {
+                requestAnimationFrame(updateProgress);
+            }
+        }
+
+        function formatTime(time) {
+            const minutes = Math.floor(time / 60);
+            const seconds = Math.floor(time % 60);
+            return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function seek(event) {
+            const progressBar = event.currentTarget;
+            const percent = event.offsetX / progressBar.offsetWidth;
+            audio.currentTime = percent * audio.duration;
+            updateProgress();
+        }
+
+        function skip(seconds) {
+            audio.currentTime += seconds;
+            updateProgress();
+        }
+    </script>
+</body>
+</html>

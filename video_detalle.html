@@ -1,0 +1,275 @@
+<html><head><base href="https://www.youtube.com/watch?v=quantum_entanglement">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RockHacker Band - Quantum Entanglement</title>
+<style>
+    :root {
+        --primary-color: #0f0f0f;
+        --secondary-color: #00ffaa;
+        --text-color: #ffffff;
+        --hover-color: #ff00ff;
+        --bg-overlay: rgba(15, 15, 15, 0.8);
+    }
+
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Courier New', monospace;
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        background-color: var(--bg-overlay);
+        padding: 20px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    nav ul li a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: var(--hover-color);
+    }
+
+    main {
+        padding-top: 80px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 3em;
+        margin-bottom: 40px;
+        text-shadow: 0 0 10px var(--secondary-color);
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .song-info {
+        background-color: var(--bg-overlay);
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 40px;
+    }
+
+    .song-info h2 {
+        color: var(--secondary-color);
+        margin-top: 0;
+    }
+
+    .lyrics {
+        white-space: pre-wrap;
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+    }
+
+    .quantum-visualizer {
+        width: 100%;
+        height: 200px;
+        background-color: var(--bg-overlay);
+        margin-top: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .particle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+        background-color: var(--bg-overlay);
+    }
+
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-bottom: 10px;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="https://rockhackerband.com/#home">Home</a></li>
+                <li><a href="https://rockhackerband.com/#discography">Discography</a></li>
+                <li><a href="https://rockhackerband.com/#photo-gallery">Gallery</a></li>
+                <li><a href="https://rockhackerband.com/#video-section">Videos</a></li>
+                <li><a href="https://rockhackerband.com/#band-members">Band</a></li>
+                <li><a href="https://rockhackerband.com/#upcoming-events">Events</a></li>
+                <li><a href="https://rockhackerband.com/#songbook">Songbook</a></li>
+                <li><a href="https://rockhackerband.com/#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Quantum Entanglement</h1>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/quantum_entanglement" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="song-info">
+                <h2>About the Song</h2>
+                <p>"Quantum Entanglement" is the opening track of RockHacker Band's groundbreaking album "Quantum Surge". This powerful anthem sets the tone for the entire album, blending heavy guitar riffs with electronic elements to represent the complexities of quantum physics.</p>
+                <p>The song explores the mind-bending concept of quantum entanglement, where particles become connected in such a way that the quantum state of each particle cannot be described independently, even when separated by a large distance.</p>
+            </div>
+            <div class="lyrics">
+<h3>Lyrics:</h3>
+Verse 1:
+In the quantum realm, where logic bends
+Two particles dance, their fates transcend
+Spooky action at a distance, Einstein's doubt
+But nature's truth we can't live without
+
+Chorus:
+Quantum entanglement, reality's web
+Spinning faster than light, in cosmic ebb
+Connected forever, no matter how far
+In this quantum world, we are who we are
+
+Verse 2:
+Superposition state, until we observe
+Collapsing possibilities, with every swerve
+Information faster than light, defying space and time
+In this quantum dance, reason and rhyme
+
+(Chorus)
+
+Bridge:
+Breaking classical bounds, in quantum's embrace
+Entangled minds in this cosmic space
+Are we all connected, in ways we can't see?
+Quantum truth sets our consciousness free
+
+(Chorus)
+
+Outro:
+In the quantum surge, we find our place
+Entangled forever, throughout time and space
+            </div>
+            <div class="quantum-visualizer" id="quantumVisualizer"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 RockHacker Band. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Quantum Entanglement Visualizer
+        const visualizer = document.getElementById('quantumVisualizer');
+        const particleCount = 50;
+        const particles = [];
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            visualizer.appendChild(particle);
+            particles.push({
+                element: particle,
+                x: Math.random() * visualizer.offsetWidth,
+                y: Math.random() * visualizer.offsetHeight,
+                vx: (Math.random() - 0.5) * 2,
+                vy: (Math.random() - 0.5) * 2,
+                entangled: null
+            });
+        }
+
+        function updateParticles() {
+            particles.forEach((particle, index) => {
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+
+                if (particle.x < 0 || particle.x > visualizer.offsetWidth) particle.vx *= -1;
+                if (particle.y < 0 || particle.y > visualizer.offsetHeight) particle.vy *= -1;
+
+                particle.element.style.left = `${particle.x}px`;
+                particle.element.style.top = `${particle.y}px`;
+
+                if (!particle.entangled && Math.random() < 0.001) {
+                    const partner = particles.find(p => p !== particle && !p.entangled);
+                    if (partner) {
+                        particle.entangled = partner;
+                        partner.entangled = particle;
+                        particle.element.style.backgroundColor = '#ff00ff';
+                        partner.element.style.backgroundColor = '#ff00ff';
+                    }
+                }
+
+                if (particle.entangled) {
+                    const dx = particle.entangled.x - particle.x;
+                    const dy = particle.entangled.y - particle.y;
+                    particle.vx += dx * 0.0001;
+                    particle.vy += dy * 0.0001;
+                }
+            });
+
+            requestAnimationFrame(updateParticles);
+        }
+
+        updateParticles();
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

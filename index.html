@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Máquina de Rebeldía</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./index.css">
+<link rel="stylesheet" href="./banda.css">
+
+</head>
+<body>
+  <nav>
+    <button class="menu-toggle" aria-label="Abrir menú">
+      &#9776;
+  </button>
+    <ul class="menu">
+      <li><a href="#home">Inicio</a></li>
+      <li><a href="#events">Eventos</a></li>
+      <li><a href="#discography">Discografía</a></li>
+      <li><a href="#band-members">Integrantes</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#gallery">Galeria</a></li>
+      <!-- <li><a href="#songbook">Cancionero</a></li> -->
+      <li><a href="#contact">Contactos</a></li>
+    </ul>
+  </nav>
+
+  <canvas id="hacker-bg"></canvas>
+
+  <div class="container">
+    <section id="home" class="section">
+      <div class="glitch-container">
+        <div class="glitch" data-text="Maquina de rebeldia">MAQUINA DE REBELDIA</div>
+      </div>
+      <section class="logo-mensaje">
+        <img src="./imagenes/logo.webp" alt="">
+      <p>¡Bienvenido a Máquina de Rebeldía! ⚡ Aquí no seguimos las reglas, las rompemos con riffs afilados y actitud desafiante. Si estás listo para encender la chispa de la revolución y dejar que el rock puro fluya por tus venas, este es tu lugar. Sube el volumen, que aquí se vive a tope. ¡Vamos a sacudir el mundo juntos! \m/</p>
+      </section>
+      
+    </section>
+
+    <section id="events" class="section">
+      <h2>Próximos eventos</h2>
+      <div class="events-container">
+        <div class="event-list">
+          <div class="event-item">
+            <h3>Festival tributo a Mago de Oz</h3>
+            <p>Fecha: Febrero 10, 2024</p>
+            <p>Evento: La casa del Zippo, La Paz, El Alto</p>
+          </div>
+          <div class="event-item">
+            <h3>Casa del Zippo</h3>
+            <p>Fecha: Diciembre 16, 2023</p>
+            <p>Evento: La casa del Zippo, La Paz, El Alto</p>
+          </div>
+          <div class="event-item">
+            <h3>Proximamente</h3>
+            <p>Fecha: En curso...</p>
+            <p>Evento: Proximamente</p>
+          </div>
+        </div>
+        <div id="map"></div>
+      </div>
+    </section>
+
+    <section id="discography" class="section">
+      <h2>Discografía</h2>
+      <div class="discography-grid">
+        <div class="album">
+          <img src="./imagenes/discografia/Maquina de rebeldia.jpg" alt="Binary Riffs album cover, featuring a guitar made of binary code" width="250" height="250">
+          <div class="album-overlay">
+            <h3>Máquina de Rebeldía</h3>
+            <p>Explosión de rebeldía y distorsión en un caos urbano.</p>
+            <div class="album-buttons">
+              <button class="album-button" onclick="window.open('https://youtube.com/playlist?list=BINARY_RIFFS', '_blank')">YouTube</button>
+              <button class="album-button" onclick="window.open('https://open.spotify.com/album/BINARY_RIFFS', '_blank')">Spotify</button>
+              <button class="album-button" onclick="window.location.href='./detalle_disco.html'">Detalles</button>
+            </div>
+          </div>
+        </div>
+        <div class="album">
+          <img src="./imagenes/discografia/Ruidos del caos.jpg" alt="Cyber Solos album cover, showing a futuristic cityscape with neon guitar strings" width="250" height="250">
+          <div class="album-overlay">
+            <h3>Despierta el fuego</h3>
+            <p>Riffs ardientes que encienden la rebelión.</p>
+            <div class="album-buttons">
+              <button class="album-button" onclick="window.open('https://youtube.com/playlist?list=CYBER_SOLOS', '_blank')">YouTube</button>
+              <button class="album-button" onclick="window.open('https://open.spotify.com/album/CYBER_SOLOS', '_blank')">Spotify</button>
+              <button class="album-button" onclick="showAlbumDetails('Cyber Solos')">Detalles</button>
+            </div>
+          </div>
+        </div>
+        <div class="album">
+          <img src="./imagenes/discografia/cadenas rotas.jpg" alt="Quantum Beats album cover, depicting drums made of swirling particles" width="250" height="250">
+          <div class="album-overlay">
+            <h3>Cadenas rotas</h3>
+            <p>Rompe la opresión con un sonido poderoso y libre.</p>
+            <div class="album-buttons">
+              <button class="album-button" onclick="window.open('https://youtube.com/playlist?list=QUANTUM_BEATS', '_blank')">YouTube</button>
+              <button class="album-button" onclick="window.open('https://open.spotify.com/album/QUANTUM_BEATS', '_blank')">Spotify</button>
+              <button class="album-button" onclick="showAlbumDetails('Quantum Beats')">Detalles</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="band-members">
+      <div class="container">
+          <h2>Conoce a la Banda</h2>
+          <div class="member-grid">
+              <div class="member-card">
+                  <img src="./imagenes/integrantes/Daniel.jpg" alt="Alex 'Glitch' Johnson - Lead Vocalist" class="member-photo" width="250" height="300">
+                  <div class="member-info">
+                      <h3 class="member-name">Daniel "DanyBoy" Perez</h3>
+                      <p class="member-role">Voz Principal</p>
+                      <p class="member-bio">Con una voz que puede romper barreras y letras que penetran en tu alma, Daniel lidera el asalto sonoro de MDR.</p>
+                      <div class="member-social">
+                          <a href="https://twitter.com/alexglitch" target="_blank"><i class="fab fa-twitter"></i></a>
+                          <a href="https://instagram.com/alexglitch" target="_blank"><i class="fab fa-instagram"></i></a>
+                      </div>
+                      <p class="fun-fact">Dato curioso: Daniel una vez hackeó una máquina de karaoke para reproducir sus temas inéditos.</p>
+                  </div>
+              </div>
+
+              <div class="member-card">
+                  <img src="./imagenes/integrantes/brian.jpg" alt="Samantha 'Circuit' Lee - Lead Guitar" class="member-photo" width="250" height="300">
+                  <div class="member-info">
+                      <h3 class="member-name">Elwis "Brian" Silva</h3>
+                      <p class="member-role">Guitarra Principal</p>
+                      <p class="member-bio">Los riffs de guitarra de Brian son como algoritmos complejos, que tejen patrones intrincados que dejan al público asombrado y a los servidores sobrecargados.</p>
+                      <div class="member-social">
+                          <a href="https://twitter.com/samcircuit" target="_blank"><i class="fab fa-twitter"></i></a>
+                          <a href="https://instagram.com/samcircuit" target="_blank"><i class="fab fa-instagram"></i></a>
+                      </div>
+                      <p class="fun-fact">Dato curioso: Brian construyó su primera guitarra a partir de piezas de computadora desechadas.</p>
+                  </div>
+              </div>
+
+              <div class="member-card">
+                  <img src="./imagenes/integrantes/Ariel.jpg" alt="Ariel 'Ariel' Desconocido - Bajo" class="member-photo" width="250" height="300">
+                  <div class="member-info">
+                      <h3 class="member-name">Ariel "Ariel" Desconocido</h3>
+                      <p class="member-role">Bajo</p>
+                      <p class="member-bio">Las líneas de bajo de Ariel son la base del sonido de MDR y proporcionan un ritmo tan profundo que podría confundirse con el tráfico de la Deep web.</p>
+                      <div class="member-social">
+                          <a href="https://twitter.com/mikebinary" target="_blank"><i class="fab fa-twitter"></i></a>
+                          <a href="https://instagram.com/mikebinary" target="_blank"><i class="fab fa-instagram"></i></a>
+                      </div>
+                      <p class="fun-fact">Dato curioso: Ariel una vez en una presentación cargó a una chica y no recordó nada.</p>
+                  </div>
+              </div>
+
+              <!-- <div class="member-card">
+                  <img src="https://rockhackerband.com/images/lisa_crypto.jpg" alt="Lisa 'Crypto' Chen - Keyboards" class="member-photo" width="250" height="300">
+                  <div class="member-info">
+                      <h3 class="member-name">Lisa "Crypto" Chen</h3>
+                      <p class="member-role">Keyboards</p>
+                      <p class="member-bio">Lisa's keyboard wizardry adds layers of encrypted melodies and synth textures that decrypt the barriers between man and machine.</p>
+                      <div class="member-social">
+                          <a href="https://twitter.com/lisacrypto" target="_blank"><i class="fab fa-twitter"></i></a>
+                          <a href="https://instagram.com/lisacrypto" target="_blank"><i class="fab fa-instagram"></i></a>
+                      </div>
+                      <p class="fun-fact">Fun Fact: Lisa's keyboard doubles as a fully functional quantum computer.</p>
+                  </div>
+              </div> -->
+
+              <div class="member-card">
+                  <img src="./imagenes/integrantes/Brock.jpg" alt="Dave 'DDoS' Martinez - Drums" class="member-photo" width="250" height="300">
+                  <div class="member-info">
+                      <h3 class="member-name">Brock "Brock" Desconocido</h3>
+                      <p class="member-role">Batería</p>
+                      <p class="member-bio">La forma de tocar la batería de Brock es un asalto implacable a los sentidos, lanzando ritmos como un ataque distribuido de denegación de servicio en los tímpanos.</p>
+                      <div class="member-social">
+                          <a href="https://twitter.com/daveddos" target="_blank"><i class="fab fa-twitter"></i></a>
+                          <a href="https://instagram.com/daveddos" target="_blank"><i class="fab fa-instagram"></i></a>
+                      </div>
+                      <p class="fun-fact">Dato curioso: Se dice que la batería de Brock está diseñada con cráneos y resto de huesos de politicos corruptos.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <section id="gallery" class="section">
+      <h2>Galería de Fotos</h2>
+      <div class="photo-gallery">
+        <div class="gallery-item">
+          <img src="./imagenes/galeria/banda.jpg" alt="TechnoRock performing live on stage with dazzling light show" width="200" height="150">
+        </div>
+        <div class="gallery-item">
+          <img src="./imagenes/galeria/texas.jpg" alt="Close-up of guitarist's hands on fretboard with digital effects overlay" width="200" height="150">
+        </div>
+        <div class="gallery-item">
+          <img src="./imagenes/galeria/img1.jpg" alt="Band members in futuristic costumes against a backdrop of computer circuitry" width="200" height="150">
+        </div>
+        <div class="gallery-item">
+          <img src="./imagenes/galeria/img2.jpg" alt="Crowd surfing at a TechnoRock concert with holographic projections above" width="200" height="150">
+        </div>
+        <div class="gallery-item">
+          <img src="./imagenes/galeria/img3.jpg" alt="Behind-the-scenes in recording studio with mix of vintage and high-tech equipment" width="200" height="150">
+        </div>
+        <div class="gallery-item">
+          <img src="./imagenes/galeria/img4.jpg" alt="TechnoRock album signing event with fans in cyber-punk inspired outfits" width="200" height="150">
+        </div>
+      </div>
+    </section>
+
+    <section id="videos" class="section">
+      <h2>Videos Musicales</h2>
+      <div class="video-grid">
+        <div class="video-item">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Iv_Ama15Imo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/zqOkKWes5hE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/lrNt4riprhA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    
+
+   
+
+    <!-- <section id="songbook" class="section">
+      <h2>Songbook</h2>
+      <div class="songbook">
+        <div class="album-list">
+          <h3>Albums</h3>
+          <ul>
+            <li onclick="loadAlbum('Binary Riffs')">Binary Riffs</li>
+            <li onclick="loadAlbum('Cyber Solos')">Cyber Solos</li>
+            <li onclick="loadAlbum('Quantum Beats')">Quantum Beats</li>
+          </ul>
+        </div>
+        <div class="song-content">
+          <div class="song-controls">
+            <button id="play-btn"><i class="fas fa-play"></i></button>
+            <button id="forward-btn"><i class="fas fa-forward"></i></button>
+            <button id="backward-btn"><i class="fas fa-backward"></i></button>
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
+            <span class="song-duration">0:00 / 0:00</span>
+          </div>
+          <div class="lyrics">
+            Select a song to view lyrics...
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="contact" class="section">
+      <h2>Contáctanos</h2>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:info@technorockband.com">nukenabber834159672@gmail.com</a></p>
+        <p>Phone: +591 71968225</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/MaquinadeRebeldia" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com/MaquinadeRebeldia" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/MaquinadeRebeldia" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/MaquinadeRebeldia" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+  <script>
+    // Hacker-style background animation
+    const canvas = document.getElementById('hacker-bg');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=[]{}|;:,.<>?';
+    const fontSize = 10;
+    const columns = canvas.width / fontSize;
+    const drops = [];
+
+    for (let i = 0; i < columns; i++) {
+      drops[i] = 1;
+    }
+
+    function draw() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#0f0';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 33);
+
+    // Google Maps integration
+    function initMap() {
+      const map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 37.7749, lng: -122.4194},
+        zoom: 4
+      });
+
+      const events = [
+        {lat: 37.7749, lng: -122.4194, title: 'Cyber Rock Festival'},
+        {lat: 40.7128, lng: -74.0060, title: 'Digital Dreams Tour'},
+        {lat: 51.5074, lng: -0.1278, title: 'Quantum Quake Concert'}
+      ];
+
+      events.forEach(event => {
+        const marker = new google.maps.Marker({
+          position: {lat: event.lat, lng: event.lng},
+          map: map,
+          title: event.title
+        });
+
+        marker.addListener('click', () => {
+          const infoWindow = new google.maps.InfoWindow({
+            content: `<h3>${event.title}</h3>`
+          });
+          infoWindow.open(map, marker);
+        });
+      });
+    }
+
+    // Songbook functionality
+    function loadAlbum(albumName) {
+      // Simulated album data
+      const albums = {
+        'Binary Riffs': ['Digital Love', 'Cyber Heart', 'Code Breaker'],
+        'Cyber Solos': ['Neon Dreams', 'Virtual Reality', 'Hologram Romance'],
+        'Quantum Beats': ['Entangled', 'Superposition', 'Wave Function']
+      };
+
+      const songList = albums[albumName];
+      const songContent = document.querySelector('.song-content');
+      songContent.innerHTML = `
+        <h3>${albumName}</h3>
+        <ul>
+          ${songList.map(song => `<li onclick="loadSong('${song}')">${song}</li>`).join('')}
+        </ul>
+      `;
+    }
+
+    function loadSong(songName) {
+      // Simulated song data
+      const lyrics = `This is where the lyrics for ${songName} would go.\n\nVerse 1:\nDigital dreams in a neon light,\nCyber world shining so bright.\n\nChorus:\nTechno rock, we're breaking through,\nVirtual reality, it's all so new.`;
+
+      const songContent = document.querySelector('.song-content');
+      songContent.innerHTML = `
+        <div class="song-controls">
+          <button id="play-btn"><i class="fas fa-play"></i></button>
+          <button id="forward-btn"><i class="fas fa-forward"></i></button>
+          <button id="backward-btn"><i class="fas fa-backward"></i></button>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+          <span class="song-duration">0:00 / 3:30</span>
+        </div>
+        <div class="lyrics">
+          <h3>${songName}</h3>
+          ${lyrics}
+        </div>
+      `;
+    }
+
+    // Add event listeners and additional functionality as needed
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
