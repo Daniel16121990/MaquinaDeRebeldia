@@ -1,0 +1,523 @@
+<!DOCTYPE html><html><head><base href="https://maquinaderebeldiabandhackercancionero.webapplication.com/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Máquina de Rebeldía - Cancionero Hacker</title><style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+  :root {
+    --neon-green: #39ff14;
+    --cyber-blue: #00ffff;
+    --rebel-red: #ff0000;
+    --dark-bg: #0a0a0a;
+    --menu-bg: #1a1a1a;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Share Tech Mono', monospace;
+    background-color: var(--dark-bg);
+    color: var(--neon-green);
+    overflow-x: hidden;
+  }
+
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* Menu Styles */
+  .menu {
+    width: 300px;
+    background-color: var(--menu-bg);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .menu-hidden {
+    transform: translateX(100%);
+  }
+
+  .menu-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    color: var(--neon-green);
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .song-list {
+    list-style-type: none;
+    padding: 20px;
+  }
+
+  .song-list li {
+    margin-bottom: 10px;
+  }
+
+  .song-list a {
+    color: var(--neon-green);
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .song-list a:hover {
+    color: var(--cyber-blue);
+    text-shadow: 0 0 5px var(--cyber-blue);
+    transform: translateX(-5px);
+  }
+
+  .song-list a.active {
+    color: var(--rebel-red);
+    text-shadow: 0 0 5px var(--rebel-red);
+    transform: translateX(-5px);
+  }
+
+  /* Main Content Styles */
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-right: 300px;
+    transition: margin-right 0.3s ease-in-out;
+  }
+
+  .main-content-full {
+    margin-right: 0;
+  }
+
+  /* Song Display Styles */
+  .song-display {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(26, 26, 26, 0.8);
+    border: 1px solid var(--neon-green);
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--neon-green);
+  }
+
+  .song-title {
+    font-size: 24px;
+    color: var(--cyber-blue);
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .song-lyrics {
+    white-space: pre-wrap;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .chorus {
+    color: var(--rebel-red);
+  }
+
+  .guitar-solo {
+    font-style: italic;
+    color: var(--cyber-blue);
+  }
+
+  .guitar-solo::before {
+    content: "🎸 ";
+  }
+
+  /* Audio Player Styles */
+  .audio-player {
+    background-color: var(--menu-bg);
+    border: 1px solid var(--neon-green);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .audio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .audio-btn {
+    background: none;
+    border: none;
+    color: var(--neon-green);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .audio-btn:hover {
+    color: var(--cyber-blue);
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 5px;
+    background-color: var(--dark-bg);
+    position: relative;
+    cursor: pointer;
+  }
+
+  .progress {
+    height: 100%;
+    background-color: var(--neon-green);
+    width: 0;
+    transition: width 0.1s linear;
+  }
+
+  .time-display {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .menu {
+      width: 100%;
+    }
+
+    .main-content {
+      margin-right: 0;
+      padding-top: 60px;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+  }
+
+  /* Matrix Effect */
+  .matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.1;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <button class="menu-toggle" id="menuToggle" style="right: 10px; left: auto;">☰</button>
+  <nav class="menu menu-hidden" id="menu" style="right: 0; left: auto;">
+    <ul class="song-list">
+  <li style="text-align: center; margin-bottom: 20px;">
+    <svg width="100" height="100" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45" fill="none" stroke="#39ff14" stroke-width="2"></circle>
+      <path d="M30 50 L70 50 M50 30 L50 70" stroke="#39ff14" stroke-width="2"></path>
+      <text x="50" y="85" font-family="Share Tech Mono" font-size="12" fill="#39ff14" text-anchor="middle">MÁQUINA DE REBELDÍA</text>
+    </svg>
+  </li>
+  <li><a href="#" data-song="rebelion-digital" class="song-link">Rebelión Digital</a></li>
+  <li><a href="#" data-song="codigo-libre" class="song-link">Código Libre</a></li>
+  <li><a href="#" data-song="firewall" class="song-link">Firewall</a></li>
+  <li><a href="#" data-song="anonymous" class="song-link">Anonymous</a></li>
+  <li><a href="#" data-song="bits-de-libertad" class="song-link">Bits de Libertad</a></li>
+</ul>
+  </nav>
+  <main class="main-content main-content-full" id="mainContent">
+    <div class="song-display" id="songDisplay">
+      <div class="audio-player">
+        <audio id="audioPlayer" src=""></audio>
+        <div class="audio-controls">
+          <button class="audio-btn" id="prevBtn">⏮</button>
+          <button class="audio-btn" id="playPauseBtn">▶</button>
+          <button class="audio-btn" id="nextBtn">⏭</button>
+        </div>
+        <div class="progress-bar" id="progressBar">
+          <div class="progress" id="progress"></div>
+        </div>
+        <div class="time-display">
+          <span id="currentTime">00:00</span>
+          <span id="duration">00:00</span>
+        </div>
+      </div>
+      <h2 class="song-title" id="songTitle">Selecciona una canción</h2>
+      <pre class="song-lyrics" id="songLyrics" style="text-align: center;">Las letras de la canción aparecerán aquí...</pre>
+    </div>
+  </main>
+</div>
+<canvas class="matrix-bg" id="matrixCanvas"></canvas>
+
+<script>
+  // Menu Toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('menu');
+  const mainContent = document.getElementById('mainContent');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('menu-hidden');
+    mainContent.classList.toggle('main-content-full');
+  });
+
+  // Song Selection
+  const songLinks = document.querySelectorAll('.song-list a');
+  const songTitle = document.getElementById('songTitle');
+  const songLyrics = document.getElementById('songLyrics');
+  const audioPlayer = document.getElementById('audioPlayer');
+
+  const songs = {
+    'rebelion-digital': {
+      title: 'Rebelión Digital',
+      lyrics: `Bits y bytes, nuestra revolución
+Firewall derribado, libre conexión
+<span class="chorus">En la red, somos la rebelión
+Código binario, nuestra canción</span>
+
+Hackers unidos, contra el sistema
+Información libre, nuestro emblema
+<span class="chorus">Teclas que rompen las cadenas
+Libertad digital, corre por nuestras venas</span>
+
+<span class="guitar-solo">Solo de guitarra</span>
+
+Servidores caen, la verdad emerge
+Anonymous somos, el poder converge
+<span class="chorus">En cada línea de código escrita
+La revolución digital, infinita</span>
+
+Contraseñas rotas, acceso concedido
+El conocimiento ya no está prohibido
+<span class="chorus">Máquina de Rebeldía, en cada computadora
+La red es nuestra, ahora y siempre, sin demora</span>`,
+      audio: 'rebelion-digital.mp3'
+    },
+    'codigo-libre': {
+      title: 'Código Libre',
+      lyrics: `Líneas de código, fluyen sin cesar
+Open source es la bandera, que vamos a ondear
+<span class="chorus">Código libre, revolución digital
+Compartir es poder, filosofía vital</span>
+
+GitHub es nuestro hogar, colaboración sin fin
+Forkeamos el futuro, un nuevo mundo a construir
+<span class="chorus">Código libre, no hay cadenas que nos aten
+Juntos programamos, que las barreras se desaten</span>
+
+<span class="guitar-solo">Solo de guitarra</span>
+
+Kernel Linux, Apache, y MySQL
+Herramientas de libertad, en nuestro arsenal
+<span class="chorus">Código libre, la información quiere ser libre
+Somos los guardianes, de un futuro posible</span>
+
+Compilamos sueños, debuggeamos la realidad
+En cada commit, construimos nuestra verdad
+<span class="chorus">Código libre, es nuestra revolución
+Máquina de Rebeldía, código en acción</span>`,
+      audio: 'codigo-libre.mp3'
+    },
+    'firewall': {
+      title: 'Firewall',
+      lyrics: `Muro de fuego, barrera digital
+Tratando de contener, nuestra marea virtual
+<span class="chorus">Firewall, te derribaremos
+Con paquetes de datos, te atravesaremos</span>
+
+Puertos bloqueados, pero encontraremos la forma
+De filtrar nuestro mensaje, provocar la reforma
+<span class="chorus">Firewall, no puedes detenernos
+Somos flujo de información, imposible contenernos</span>
+
+<span class="guitar-solo">Solo de guitarra</span>
+
+Proxy y VPN, nuestras armas secretas
+Saltamos tus restricciones, como ágiles atletas
+<span class="chorus">Firewall, eres solo una ilusión
+De seguridad falsa, frente a nuestra incursión</span>
+
+En cada paquete transmitido, nuestra rebeldía
+Firewall caído, triunfa la anarquía
+<span class="chorus">Firewall, ahora eres historia
+Máquina de Rebeldía, canta su victoria</span>`,
+      audio: 'firewall.mp3'
+    },
+    'anonymous': {
+      title: 'Anonymous',
+      lyrics: `Máscara de Fawkes, símbolo de unión
+Somos legión, expecta nuestra acción
+<span class="chorus">Anonymous, en las sombras acechamos
+Por la justicia digital, incansables luchamos</span>
+
+DDoS nuestra arma, servidores colapsados
+La verdad sale a la luz, secretos revelados
+<span class="chorus">Anonymous, no perdonamos
+No olvidamos, siempre atacamos</span>
+
+<span class="guitar-solo">Solo de guitarra</span>
+
+En foros y chans, nuestros planes trazamos
+El ciberespacio es nuestro, aquí gobernamos
+<span class="chorus">Anonymous, somos la voz de los sin voz
+En cada terminal, se oye nuestro feroz</span>
+
+Gobiernos tiemblan, corporaciones caen
+Ante nuestro poder, todos se contraen
+<span class="chorus">Anonymous, Máquina de Rebeldía
+Unidos en la red, hasta el fin de los días</span>`,
+      audio: 'anonymous.mp3'
+    },
+    'bits-de-libertad': {
+      title: 'Bits de Libertad',
+      lyrics: `Unos y ceros, lenguaje universal
+En cada bit transmitido, un ideal
+<span class="chorus">Bits de libertad, fluyen sin cesar
+En la red neuronal, de nuestro hogar digital</span>
+
+Encriptamos nuestros sueños, en bloques de información
+Descentralizamos el poder, blockchain revolución
+<span class="chorus">Bits de libertad, no pueden ser detenidos
+En cada nodo de la red, están distribuidos</span>
+
+<span class="guitar-solo">Solo de guitarra</span>
+
+Torrents de conocimiento, inundan la red
+P2P es nuestro mantra, compartir nuestra sed
+<span class="chorus">Bits de libertad, en cada descarga y seed
+Construimos juntos, una nueva realidad</span>
+
+El futuro es de código abierto, sin restricción
+Máquina de Rebeldía, canta esta canción
+<span class="chorus">Bits de libertad, son nuestra munición
+En la guerra digital, por la liberación</span>`,
+      audio: 'bits-de-libertad.mp3'
+    }
+  };
+
+  songLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const songId = link.getAttribute('data-song');
+      const song = songs[songId];
+      
+      // Remove active class from all links
+      songLinks.forEach(l => l.classList.remove('active'));
+      // Add active class to clicked link
+      link.classList.add('active');
+      
+      songTitle.textContent = song.title;
+      songLyrics.innerHTML = song.lyrics;
+      audioPlayer.src = song.audio;
+      audioPlayer.play();
+      
+      // Close menu on mobile
+      if (window.innerWidth <= 768) {
+        menu.classList.add('menu-hidden');
+        mainContent.classList.add('main-content-full');
+      }
+    });
+  });
+
+  // Audio Player Controls
+  const playPauseBtn = document.getElementById('playPauseBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const progressBar = document.getElementById('progressBar');
+  const progress = document.getElementById('progress');
+  const currentTimeDisplay = document.getElementById('currentTime');
+  const durationDisplay = document.getElementById('duration');
+
+  playPauseBtn.addEventListener('click', () => {
+    if (audioPlayer.paused) {
+      audioPlayer.play();
+      playPauseBtn.textContent = '⏸';
+    } else {
+      audioPlayer.pause();
+      playPauseBtn.textContent = '▶';
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    audioPlayer.currentTime -= 5;
+  });
+
+  nextBtn.addEventListener('click', () => {
+    audioPlayer.currentTime += 5;
+  });
+
+  progressBar.addEventListener('click', (e) => {
+    const clickPosition = e.clientX - progressBar.getBoundingClientRect().left;
+    const clickPercentage = clickPosition / progressBar.offsetWidth;
+    audioPlayer.currentTime = clickPercentage * audioPlayer.duration;
+  });
+
+  audioPlayer.addEventListener('timeupdate', () => {
+    const percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+    progress.style.width = `${percentage}%`;
+    currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
+  });
+
+  audioPlayer.addEventListener('loadedmetadata', () => {
+    durationDisplay.textContent = formatTime(audioPlayer.duration);
+  });
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  }
+
+  // Matrix Effect
+  const canvas = document.getElementById('matrixCanvas');
+  const ctx = canvas.getContext('2d');
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()_+{}[]|;:,.<>?';
+  const fontSize = 10;
+  const columns = canvas.width / fontSize;
+
+  const drops = [];
+  for (let i = 0; i < columns; i++) {
+    drops[i] = 1;
+  }
+
+  function drawMatrix() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = '#0F0';
+    ctx.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = characters.charAt(Math.floor(Math.random() * characters.length));
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 33);
+
+  // Resize event
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
+</body></html>
