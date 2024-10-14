@@ -52,7 +52,7 @@ solo yo no llegaría
 iré hasta el cementerio a excavar sus huesos (2)</span>
 
 hoooo`,
-    audio: './canciones/Loreena McKennitt - The Visit - 05.mp3'
+    audio: './canciones/misfits.m4a'
   },
   'con-dinero-baila-el-perro': {
     title: 'Nalgas - Con dinero baila el perro',
@@ -101,7 +101,7 @@ No hay acarreados, no los van a parar
 ¡Porque los perros solo saben ladrar!</span>
 
 <span class="melodia">Melodía (4)</span>`,
-    audio: 'codigo-libre.mp3'
+    audio: './canciones/baila_el_perro.m4a'
   },
   'ha-llegado-el-momento': {
     title: 'Eskorbuto - Ha llegado el momento',
@@ -137,7 +137,7 @@ Pueden ser ellos,
 <span class="voz-2">ellos también</span>
 
 Ha llegado el momento, de la destrucción`,
-    audio: 'firewall.mp3'
+    audio: './canciones/ha_llegado_el_momento.m4a'
   },
   'el-espiritu-del-oi': {
     title: 'Non Servium - El Espiritu del Oi',
@@ -207,7 +207,7 @@ Hazte otra vez la cresta
 De esta puta sociedad
 <span class="todos">Es el espiritu del oi!</span>
 Con nosotros no podrán`,
-    audio: 'anonymous.mp3'
+    audio: './canciones/el_espiritu_del_oi.m4a'
   },
   'nuestra-lucha': {
     title: 'Non Servium - Nuestra Lucha',
@@ -278,7 +278,7 @@ Del ambiguo y su juego tan ruín
 <span class="todos">Acostumbrados a no retroceder</span>
 Que creeis que sereis la excepción
 NOOOOOO`,
-    audio: 'bits-de-libertad.mp3'
+    audio: './canciones/nuestra_lucha.m4a'
   },
   'olor-a-muerte': {
     title: 'El Último Ke Zierre - Olor a Muerte',
@@ -312,7 +312,7 @@ Solo mentiras,
 olor a muerte
 
 <span class="guitar-solo">Intro (2)</span>`,
-    audio: 'bits-de-libertad.mp3'
+    audio: './canciones/olor_a_muerte.m4a'
   },
   'historia-triste': {
     title: 'Eskorbuto - Historia Triste',
@@ -351,7 +351,7 @@ Este es tu dia
 
 Uooh (4)
 ¡Historia final!`,
-    audio: 'bits-de-libertad.mp3'
+    audio: './canciones/historia_triste.m4a'
   },
   'os-engañan': {
     title: 'Eskorbuto - Os Engañan',
@@ -385,7 +385,7 @@ Lo dijo anoche televisión
 <span class="todos">Ohh, si, si</span>, os engañan, os engañan así
 <span class="todos">Ohh, si, si</span>, os engañan, os engañan así
 <span class="todos">Ohh, si, si</span>, os engañan, os engañan así`,
-    audio: 'bits-de-libertad.mp3'
+    audio: './canciones/os_engañan.m4a'
   },
   'corazones-intoxicados': {
     title: 'The Casualties – Corazones Intoxicados',
@@ -425,7 +425,7 @@ Anti militar
 <span class="melodia">Melodia</span>
 
 La alarma de la vida!`,
-    audio: 'bits-de-libertad.mp3'
+    audio: './canciones/corazones_intoxicados.m4a'
   },
   'injusticia': {
     title: 'Máquina de Rebeldía - Injusticia',
@@ -477,7 +477,7 @@ Nuestra lucha es fuerte
 No permitiremos <span class="todos">mas injusticia</span>
 
 <span class="todos">injusticia (4)</span>`,
-    audio: 'bits-de-libertad.mp3'
+    audio: './canciones/'
   },
   'sistema-corrupto': {
     title: 'Máquina de Rebeldía - Sistema Corrupto',
@@ -512,7 +512,7 @@ Que nos quita todo, todo, todo</span>
 Que nos deja sin futuro
 Es el sistema injusto
 Que nos quita todo, todo, todo</span>`,
-    audio: 'bits-de-libertad.mp3'
+    audio: './canciones/'
   },
   'caos': {
     title: 'Máquina de Rebeldía - Caos',
@@ -532,7 +532,7 @@ Caos, caos, en mi ser,
 Protesta constante, <span class="todos">sin ceder.</span>
 
 <span class="melodia">Melodia</span>`,
-    audio: 'bits-de-libertad.mp3'
+    audio: './canciones/'
   }
 };
 
