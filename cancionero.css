@@ -38,7 +38,15 @@
     right: 0;
     z-index: 1000;
   }
-
+  .contenedor_img{
+    width: 100%;
+    display: flex;
+  }
+  .logo_album{
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
   .menu-hidden {
     transform: translateX(100%);
   }
