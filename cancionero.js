@@ -116,7 +116,7 @@ Puede ser el ruso,
 
 Ha llegado el momento, de la destrucción
 
-<span class="melodia">-------Melodía (1)-------</span>
+<span class="melodia">-------Melodía (2)-------</span>
 
 <span class="todos">oaeo (3)</span>
 
@@ -127,7 +127,9 @@ Pueden ser los negros,
 
 Ha llegado el momento, de la destrucción
 
-<span class="melodia">-------Melodía (4)-------</span>
+<span class="melodia">-------Melodía (2)-------</span>
+
+<span class="todos">oaeo (3)</span>
 
 Puede ser cualquiera,
 <span class="voz-2">cualquiera puede ser</span>
@@ -140,101 +142,405 @@ Ha llegado el momento, de la destrucción`,
   'el-espiritu-del-oi': {
     title: 'Non Servium - El Espiritu del Oi',
     lyrics: `
-    <span class="melodia">-------Melodia (2)-------</span>
-    <span class="melodia">-------Melodia (2)-------</span>
-    hoy!!!
-    <span class="melodia">-------Melodia (2)-------</span>
+<span class="melodia">-------Melodia (2)-------</span>
+<span class="melodia">-------Melodia (2)-------</span>
     
-    Pasan los años y no puedes negar
-    Que todo cambie tu mentalidad
-    Ritmo de vida y forma de pensar
-    Cosas distintas que no puedes mezclar
+Pasan los años y no puedes negar
+Que todo cambie tu mentalidad
+Ritmo de vida y forma de pensar
+Cosas distintas que no puedes mezclar
     
-    Tu cara muestra tu desolación
-    Y tu mirada me transmite dolor
-    No eres el mismo que fuiste ayer
-    Te han cortado las alas
+Tu cara muestra tu desolación
+Y tu mirada me transmite dolor
+No eres el mismo que fuiste ayer
+<span class="todos">Te han cortado las alas</span>
+
+<span class="todos">Abre la puerta escapate</span>
+Seguimos en la brecha
+<span class="todos">Cagate en dios bebete tres</span>
+Hazte otra vez la cresta
+<span class="todos">Romperemos los esquemas</span>
+De esta puta sociedad
+<span class="todos">Es el espiritu del oi!</span>
+Con nosotros no podrán
+
+<span class="melodia">-------Melodia (2)-------</span>
+
+Pero ahora tienes una vida mejor
+Puedes comprarte un televisor
+Salir por ahí sin que te miren mal
+<span class="todos">Porque eres uno de ellos</span>
+
+Este es el precio que hay que pagar
+Para integrarse en su sociedad
+Yo me pregunto dónde está
+<span class="todos">Dónde está tu felicidad</span>
+
+<span class="todos">Abre la puerta escapate</span>
+Seguimos en la brecha
+<span class="todos">Cagate en dios bebete tres</span>
+Hazte otra vez la cresta
+<span class="todos">Romperemos los esquemas</span>
+De esta puta sociedad
+<span class="todos">Es el espiritu del oi!</span>
+Con nosotros no podrán
     
-    Abre la puerta escapate
-    Seguimos en la brecha
-    Cagate en dios bebete tres
-    Hazte otra vez la cresta
-    Romperemos los esquemas
-    De esta puta sociedad
-    Es el espiritu del oi!
-    Con nosotros no podrán
+<span class="melodia">Melodía (2) intro</span>
+<span class="melodia">Melodia (2) intro2</span>
+<span class="melodia">Melodía (2) riff</span>
+<span class="melodia">Melodia (2) mosh</span>
+
+<span class="todos">Abre la puerta escapate</span>
+<span class="todos">Seguimos en la brecha</span>
+<span class="todos">Cagate en dios bebete tres</span>
+<span class="todos">Hazte otra vez la cresta</span>
+<span class="todos">Romperemos los esquemas</span>
+<span class="todos">De esta puta sociedad</span>
+<span class="todos">Es el espiritu del oi!</span>
+Con nosotros no podrán
     
-    -------- melodía(2)-------
-    
-    Pero ahora tienes una vida mejor
-    Puedes comprarte un televisor
-    Salir por ahí sin que te miren mal
-    Porque eres uno de ellos
-    
-    Este es el precio que hay que pagar
-    Para integrarse en su sociedad
-    Yo me pregunto dónde está
-    Dónde está tu felicidad
-    
-    Abre la puerta escapate
-    Seguimos en la brecha
-    Cagate en dios bebete tres
-    Hazte otra vez la cresta
-    Romperemos los esquemas
-    De esta puta sociedad
-    Es el espiritu del oi!
-    Con nosotros no podrán
-    
-    Melodía (2) intro
-    Melodia (2) intro2
-    Melodía (2) riff
-    Melodia (2) mosh
-    
-    Abre la puerta escapate
-    Seguimos en la brecha
-    Cagate en dios bebete tres
-    Hazte otra vez la cresta
-    Romperemos los esquemas
-    De esta puta sociedad
-    Es el espiritu del oi!
-    Con nosotros no podrán
-    
-    Abre la puerta escapate
-    Seguimos en la brecha
-    Cagate en dios bebete tres
-    Hazte otra vez la cresta
-    Romperemos los esquemas
-    De esta puta sociedad
-    Es el espiritu del oi!
-    Con nosotros no podrán`,
+<span class="todos">Abre la puerta escapate</span>
+Seguimos en la brecha
+<span class="todos">Cagate en dios bebete tres</span>
+Hazte otra vez la cresta
+<span class="todos">Romperemos los esquemas</span>
+De esta puta sociedad
+<span class="todos">Es el espiritu del oi!</span>
+Con nosotros no podrán`,
     audio: 'anonymous.mp3'
   },
-  'bits-de-libertad': {
-    title: 'Bits de Libertad',
-    lyrics: `Unos y ceros, lenguaje universal
-En cada bit transmitido, un ideal
-<span class="chorus">Bits de libertad, fluyen sin cesar
-En la red neuronal, de nuestro hogar digital</span>
+  'nuestra-lucha': {
+    title: 'Non Servium - Nuestra Lucha',
+    lyrics: `
+Ten muy claro que no cuentas conmigo
+Debes saber que eres mi enemigo
+<span class="todos">Con nosotros no eres bienvenido</span>
+<span class="todos">Ve con ellos, necesitan amigos</span>
 
-Encriptamos nuestros sueños, en bloques de información
-Descentralizamos el poder, blockchain revolución
-<span class="chorus">Bits de libertad, no pueden ser detenidos
-En cada nodo de la red, están distribuidos</span>
+Elegiste el camino mas fácil
+La postura del sucio cobarde
+<span class="todos">Un camino que no respetamos</span>
+<span class="todos">Para nosotros solo existen dos lados</span>
 
-<span class="guitar-solo">Solo de guitarra</span>
+LO QUE NO VAMOS A DEJAR
+QUE DESPRECIEIS NUESTRA LUCHA NOOOOOOO
+<span class="todos">Que os riais de nuestros muertos</span>
+<span class="todos">Desprecieis a nuestros presos</span>
 
-Torrents de conocimiento, inundan la red
-P2P es nuestro mantra, compartir nuestra sed
-<span class="chorus">Bits de libertad, en cada descarga y seed
-Construimos juntos, una nueva realidad</span>
+LO QUE NO VAMOS A PERMITIR
+QUE DESPRECIEIS NUESTRA LUCHA NOOOOOOO
+<span class="todos">Que os riais de nuestros muertos</span>
+<span class="todos">Desprecieis a nuestros presos</span>
 
-El futuro es de código abierto, sin restricción
-Máquina de Rebeldía, canta esta canción
-<span class="chorus">Bits de libertad, son nuestra munición
-En la guerra digital, por la liberación</span>`,
+Hace tiempo que juegas a dos bandas
+Hace tiempo que no respetas nada
+<span class="todos">Hace tiempo que eres un payaso</span>
+<span class="todos">Todo esto tienes que pagarlo</span>
+
+Eres una burla a nuestra lucha
+Solo eres escoria como ellos
+<span class="todos">Se acabaron las contemplaciones</span>
+<span class="todos">Se acabó atender a razones</span>
+
+LO QUE NO VAMOS A DEJAR
+QUE DESPRECIEIS NUESTRA LUCHA NOOOOOOO
+<span class="todos">Que os rias de nuestros muertos</span>
+<span class="todos">Desprecieis a nuestros presos</span>
+
+LO QUE NO VAMOS A PERMITIR
+QUE DESPRECIEIS NUESTRA LUCHA NOOOOOOO!!
+<span class="todos">Que os riais de nuestros muertos</span>
+<span class="todos">Desprecieis a nuestros presos</span>
+
+Eres una plaga, una enfermedad
+Que hay erradicar como la puta peste
+No tienes sentido de la lealtad
+Solo estar agusto y desaparecer
+
+<span class="todos">Tragarás, chuparás y te arrastrarás
+Como una serpiente es el que más calienta
+Llegará el momento en que te quemarás
+Ese es el precio de tentar a la suerte
+
+Ahora es tiempo de reacción
+Demostrarles que este es nuestro puto infierno
+Que no hay lugar para la ambigüedad
+Que este es su final</span>
+
+<span class="todos">Odio eterno a la complicidad</span>
+Del ambiguo y su juego tan ruín
+<span class="todos">Acostumbrados a no retroceder</span>
+Que creeis que sereis la excepción
+NOOOOOO
+
+<span class="todos">Odio eterno a la complicidad</span>
+Del ambiguo y su juego tan ruín
+<span class="todos">Acostumbrados a no retroceder</span>
+Que creeis que sereis la excepción
+NOOOOOO`,
+    audio: 'bits-de-libertad.mp3'
+  },
+  'olor-a-muerte': {
+    title: 'El Último Ke Zierre - Olor a Muerte',
+    lyrics: `
+<span class="guitar-solo">Intro (1)</span>
+Te has mirado al espejo con complejo,
+¿que es lo que han hecho de ti?.
+
+La justicia no te sirve,
+condenado inocente,
+
+y te sientas en un rincón,
+abatido por tu depresión,
+ellos te llaman,
+tu no escuchas,
+
+ya no tienes a quien respetar,
+ya no tienes a quien querer,
+Solo mentiras,
+solo mentirás
+
+<span class="todos">olor a muerte (2)</span>
+
+<span class="guitar-solo">Riff (2)</span>
+<span class="guitar-solo">Riff 2 (2)</span>
+
+<span class="todos">Olor muerte (1)</span>
+ya no tienes a quien respetar,
+ya no tienes a quien querer,
+Solo mentiras,
+olor a muerte
+
+<span class="guitar-solo">Intro (2)</span>`,
+    audio: 'bits-de-libertad.mp3'
+  },
+  'historia-triste': {
+    title: 'Eskorbuto - Historia Triste',
+    lyrics: `
+<span class="melodia">Melodía (4) intro</span>
+Pasan los años
+Pasa tu vida
+Pasan los meses
+Pasan tus días
+Pasan las horas
+También tus minutos
+¡Este puede ser <span class="todos">tu último segundo!</span>
+
+<span class="todos">Uooh</span>, historia triste
+<span class="todos">Uooh</span>, historia historica
+<span class="todos">Uooh</span>, historia final
+
+<span class="melodia">Melodía (2) intro</span>
+
+Una mañana
+Muy temprano
+De tus sueños despertarás
+No lo sabrás
+Este es tu dia
+<span class="todos">¡Vas a morir!</span>
+
+<span class="todos">Uooh</span>, historia triste
+<span class="todos">Uooh</span>, historia historica
+<span class="todos">Uooh</span>, historia final
+
+<span class="guitar-solo">Solo (2)</span>
+
+<span class="todos">Uooh</span>, historia triste
+<span class="todos">Uooh</span>, historia historica
+<span class="todos">Uooh</span>, historia final
+
+Uooh (4)
+¡Historia final!`,
+    audio: 'bits-de-libertad.mp3'
+  },
+  'os-engañan': {
+    title: 'Eskorbuto - Os Engañan',
+    lyrics: `
+<span class="melodia">Intro (2)</span>
+Anuncios publicitarios
+Que prometen felicidad
+De algún producto de moda
+Que te hará cambiar
+
+Comprador que entra en la tienda
+Al acecho el vendedor
+Vendedor que vende producto
+Comprador que se vaya a mamar
+
+<span class="guitar-solo">Solo (2)</span>
+
+<span class="todos">Ohh, si, si</span>, os engañan, os engañan así
+<span class="todos">Ohh, si, si</span>, os engañan, os engañan así
+<span class="todos">Ohh, si, si</span>, os engañan, os engañan así
+
+<span class="melodia">Melodia Intro (2)</span>
+
+Mi vieja me despertó
+En la cama estaba yo
+Han cambiado la hora
+Lo dijo anoche televisión
+
+<span class="melodia">Melodia (2)</span>
+
+<span class="todos">Ohh, si, si</span>, os engañan, os engañan así
+<span class="todos">Ohh, si, si</span>, os engañan, os engañan así
+<span class="todos">Ohh, si, si</span>, os engañan, os engañan así`,
+    audio: 'bits-de-libertad.mp3'
+  },
+  'corazones-intoxicados': {
+    title: 'The Casualties – Corazones Intoxicados',
+    lyrics: `
+ANTI!
+
+<span class="melodia">Melodia</span>
+
+Estamos embriagados
+borrachos y perdidos
+Es mejor que estar
+sufriendo en la vida
+
+Nosotros contra ellos
+asi siempre ha sido
+Nosotros contra ellos
+asi seguira
+
+<span class="melodia">Melodia</span>
+
+Corazones intoxicados
+a ustedes yo saludo
+El avismo de la vida
+tomando siempre atento
+
+De una copa a otra
+me siento muy feliz
+Sonido de guitarra
+la alarma de la vida
+
+<span class="melodia">Melodia</span>
+
+Anti sistema
+Anti gobierno
+Anti militar
+
+<span class="melodia">Melodia</span>
+
+La alarma de la vida!`,
+    audio: 'bits-de-libertad.mp3'
+  },
+  'injusticia': {
+    title: 'Máquina de Rebeldía - Injusticia',
+    lyrics: `
+La gente habla, la gente grita
+Pero <span class="todos">nadie hace nada</span>
+
+Estamos cansados, estamos artos
+De ser <span class="todos">ignorados</span>
+
+El poder corrupto nos controla
+Nos manipula <span class="todos">y nos oprime</span>
+
+Pero nosotros no estamos solos
+Juntos podemos <span class="todos">hacer un cambio</span>
+
+<span class="melodia">Melodia (4)</span>
+
+Nos uniremos y pelearemos
+Hasta que todos <span class="todos">sean libres</span>
+Nuestra lucha es justa
+<span class="todos">Nada nos detendrá</span>
+
+Nos alzamos y nos revelamos
+Contra el sistema y <span class="todos">sus problemas</span>
+Nuestra lucha es fuerte
+No permitiremos <span class="todos">mas injusticia</span>
+
+<span class="todos">Hey! (6)</span>
+
+Nos uniremos y pelearemos
+Hasta que todos sean libres
+Nuestra lucha es justa
+Nada nos detendrá
+
+Nos alzamos y nos revelamos
+Contra el sistema y sus problemas
+Nuestra voz es fuerte
+No permitiremos mas injusticia
+
+Nos uniremos y pelearemos
+Hasta que todos <span class="todos">sean libres</span>
+Nuestra lucha es justa
+<span class="todos">Nada nos detendrá</span>
+
+Nos alzamos y nos revelamos
+Contra el sistema y <span class="todos">sus problemas</span>
+Nuestra lucha es fuerte
+No permitiremos <span class="todos">mas injusticia</span>
+
+<span class="todos">injusticia (4)</span>`,
+    audio: 'bits-de-libertad.mp3'
+  },
+  'sistema-corrupto': {
+    title: 'Máquina de Rebeldía - Sistema Corrupto',
+    lyrics: `
+<span class="melodia">Melodia</span>
+
+La vida es un juego de azar
+Donde siempre pierde el mismo
+El de abajo siempre pagará
+Y el de arriba será el rico
+
+<span class="melodia">Melodia</span>
+
+<span class="todos">Es el sistema corrupto
+Que nos deja sin futuro
+Es el sistema injusto
+Que nos quita todo, todo, todo</span>
+
+Trabajamos para sobrevivir
+Mientras ellos viven de nosotros
+La riqueza se concentra en el fin
+Mientras nosotros vivimos en el lodo
+
+<span class="todos">Es el sistema corrupto
+Que nos deja sin futuro
+Es el sistema injusto
+Que nos quita todo, todo, todo</span>
+
+<span class="guitar-solo">Solo Guitar</span>
+
+<span class="todos">Es el sistema corrupto
+Que nos deja sin futuro
+Es el sistema injusto
+Que nos quita todo, todo, todo</span>`,
+    audio: 'bits-de-libertad.mp3'
+  },
+  'caos': {
+    title: 'Máquina de Rebeldía - Caos',
+    lyrics: `
+<span class="melodia">Melodia</span>
+
+Caos, caos, en mi ciudad,
+Gritando muy fuerte, <span class="todos">revolución!</span>
+Caos, caos, en mi ser,
+Revolución ardiente, <span class="todos">sin temer.</span>
+
+<span class="melodia">Melodia</span>
+
+Caos, caos, en las calles,
+Gritos de cambio, <span class="todos">sin temor.</span>
+Caos, caos, en mi ser,
+Protesta constante, <span class="todos">sin ceder.</span>
+
+<span class="melodia">Melodia</span>`,
     audio: 'bits-de-libertad.mp3'
   }
 };
+
+
+
+
+
+
 
 songLinks.forEach(link => {
   link.addEventListener('click', (e) => {
